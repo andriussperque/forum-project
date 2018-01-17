@@ -1,19 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
-import { SpecComponent } from './footer/spec.component';
+import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
-import { HeaderComponent } from './menu/header.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ForumComponent,
-    SpecComponent,
+    FooterComponent,
     MenuComponent,
     HeaderComponent
   ],
