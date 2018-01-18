@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'forum',
+  selector: 'app-forum',
   templateUrl: './forum.component.html'
 })
 export class ForumComponent implements OnInit {
