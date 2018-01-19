@@ -11,17 +11,17 @@ Main characteristics:
  - It was implemented comments to the answers, it stays in the second level.
 
 Commands:
-<b>creates a new angular 4 project</b>
-ng new forum-project
+<p><b>creates a new angular 4 project</b></p>
+<p>ng new forum-project</p>
 
-<b>install bootstrap and copy it into the node_modules</b>
-npm install -s bootstrap
+<p><b>install bootstrap and copy it into the node_modules</b></p>
+<p>npm install -s bootstrap</p>
 
-<b>Configure the bootstrap by changing the file angular-cli.json</b>
+<p><b>Configure the bootstrap by changing the file angular-cli.json</b></p>
 "styles": [
   "styles.css",
   "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ],
 
-<b>Divided the project into smaller components</b>
-header, footer, menu lateral and forum area.
+<p><b>Divided the project into smaller components</b></p>
+<p>header, footer, menu lateral and forum area.</p>
