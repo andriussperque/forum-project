@@ -6,7 +6,7 @@ import { ForumModule } from './forum/forum.module';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
-
+import { routing } from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    ForumModule
+    ForumModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
