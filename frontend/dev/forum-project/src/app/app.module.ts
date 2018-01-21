@@ -6,7 +6,7 @@ import { ForumModule } from './forum/forum.module';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
-import { routing } from "./app.routing";
+import { Routing } from "./app.routing";
 import { HomepageComponent } from './home/homepage.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { HomepageComponent } from './home/homepage.component';
   imports: [
     BrowserModule,
     ForumModule,
-    routing
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,41 +18,24 @@
       <div class="tab-content">
         <div id="tab_newest" class="tab-pane fade in active">
           
-          <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
-            <div class="row">
-              <div class="col-sm-1">
-                <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
-              </div>
-              <div class="col-sm-9">
-                <p>Title of the question</p>
-                <p>Content of the question until a certain point, after some lines and etc, the content should be cut.</p>
-              </div>      
-            </div>
-          </div>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let question of questions">
+              
+              <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
+                <div class="row">
+                  <div class="col-sm-1">
+                    <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
+                  </div>
+                  <div class="col-sm-9">
+                    <a [routerLink]="[question.id,'detail']">
+                         {{question.title}}</a>
+                    <p>{{question.content}}</p>
+                  </div>      
+                </div>
+              </div> 
 
-          <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
-            <div class="row">
-              <div class="col-sm-1">
-                <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
-              </div>
-              <div class="col-sm-9">
-                <p>Title of the question</p>
-                <p>Content of the question until a certain point, after some lines and etc, the content should be cut.</p>
-              </div>      
-            </div>
-          </div>
-
-          <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
-            <div class="row">
-              <div class="col-sm-1">
-                <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
-              </div>
-              <div class="col-sm-9">
-                <p>Title of the question</p>
-                <p>Content of the question until a certain point, after some lines and etc, the content should be cut.</p>
-              </div>      
-            </div>
-          </div>
+            </li>
+          </ul>
 
 
         </div>

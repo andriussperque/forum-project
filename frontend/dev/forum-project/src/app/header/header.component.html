@@ -1,12 +1,22 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Vanhack Forum</a>
+      
+      <!-- Link fo Home -->
+      <a [routerLink]="['/home']" class="navbar-brand">Vanhack Forum</a>
+
     </div>
     <ul class="nav navbar-nav">
+      
       <li routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/forum/questions']">Questions</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['/forum/questions/question-create']" > New Question</a></li>
+          [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/forum/questions']">Questions</a>
+      </li>
+
+      <li routerLinkActive="active">
+          <a [routerLink]="['/forum/questions/question-create']"> New Question</a>
+      </li>
+
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
