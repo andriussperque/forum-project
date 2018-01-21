@@ -15,12 +15,16 @@ const APP_ROUTES: Routes = [
         component: HomepageComponent
     },
     {
-        path: 'forum',
+        path: 'forum/questions',
         component: ForumComponent
     },
     {
-        path: 'question-detail', 
+        path: 'forum/questions/:id', 
         component: QuestionDetailComponent 
+    },
+    {
+        path: 'forum/questions/:id/edit', 
+        component: QuestionCreateComponent 
     },
     {
         path: 'forum/questions/question-create', 
