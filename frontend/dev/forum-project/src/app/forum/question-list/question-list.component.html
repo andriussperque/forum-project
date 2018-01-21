@@ -1,18 +1,17 @@
 <div class="container">
     <ul class="nav nav-tabs">
         
-      
         <li class="active">
-          <a  data-toggle="pill"> Newest </a>
-
+          <a  data-toggle="pill"> <strong>Newest questions</strong></a>
               <!--  
                 [routerLink]= "['/forum/quesions']"
                 [queryParams]= "{allowEdit:'1'}"
-                    fragment="loading"> Newest </a>
+                fragment="loading"> Newest </a>
               -->
         </li>
-        <li><a data-toggle="pill" href="#tab_frequent">Frequent</a></li>
-        <li><a data-toggle="pill" href="#tab_voted">Voted</a></li>
+        <!-- <li><a data-toggle="pill" href="#tab_frequent">My Questions</a></li> --> 
+        <!-- <li><a data-toggle="pill" href="#tab_frequent">Frequent</a></li> --> 
+        <!-- <li><a data-toggle="pill" href="#tab_voted">Voted</a></li> -->
       </ul>
       
       <div class="tab-content">
@@ -32,6 +31,12 @@
                     <p>{{question.content}}</p>
                   </div>      
                 </div>
+                <div class="row">
+                  <div class="col-sm-2">
+                    <a>edit</a>
+                    <a>delelte</a>
+                  </div>
+                </div>
               </div> 
 
             </li>
@@ -46,6 +51,7 @@
           <!-- Implement later -->
         </div>
 
+        <!--
         <ul class="pagination pagination-sm">
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
@@ -53,5 +59,6 @@
           <li><a href="#">4</a></li>
           <li><a href="#">5</a></li>
         </ul>
+        -->
       </div>
 </div>

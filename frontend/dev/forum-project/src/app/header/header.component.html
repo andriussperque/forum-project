@@ -8,17 +8,18 @@
     </div>
     <ul class="nav navbar-nav">
       
-      <li routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">
+      <!-- Link to Questions' list -->
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/forum/questions']">Questions</a>
       </li>
 
-      <li routerLinkActive="active">
-          <a [routerLink]="['/forum/questions/question-create']"> New Question</a>
+      <!-- It needs to check if the user is logged in or not -->
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/forum/questions/question-create']">New Question</a>
       </li>
-
     </ul>
 
+    <!-- Login & Search area --> 
     <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
