@@ -1,63 +1,63 @@
 
 <ul class="nav nav-tabs">
     
-    <li class="active">
-      <a  data-toggle="pill"> <strong>Newest questions</strong></a>
-          <!--  
-            [routerLink]= "['/forum/quesions']"
-            [queryParams]= "{allowEdit:'1'}"
-            fragment="loading"> Newest </a>
-          -->
-    </li>
-    <!-- <li><a data-toggle="pill" href="#tab_frequent">My Questions</a></li> --> 
-    <!-- <li><a data-toggle="pill" href="#tab_frequent">Frequent</a></li> --> 
-    <!-- <li><a data-toggle="pill" href="#tab_voted">Voted</a></li> -->
-  </ul>
+  <li class="active">
+    <a  data-toggle="pill"> <strong>Newest questions</strong></a>
+        <!--  
+          [routerLink]= "['/forum/quesions']"
+          [queryParams]= "{allowEdit:'1'}"
+          fragment="loading"> Newest </a>
+        -->
+  </li>
+  <!-- <li><a data-toggle="pill" href="#tab_frequent">My Questions</a></li> --> 
+  <!-- <li><a data-toggle="pill" href="#tab_frequent">Frequent</a></li> --> 
+  <!-- <li><a data-toggle="pill" href="#tab_voted">Voted</a></li> -->
+</ul>
   
-  <div class="tab-content">
-    <div id="tab_newest" class="tab-pane fade in active">
-      
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let question of questions">
-          
-          <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
-            <div class="row">
-              <div class="col-sm-1">
-                <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
-              </div>
-              <div class="col-sm-9">
-                <a [routerLink]="[question.id,'detail']">
-                      {{question.title}}</a>
-                <p>{{question.content}}</p>
-              </div>      
+<div class="tab-content">
+  <div id="tab_newest" class="tab-pane fade in active">
+    
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let question of questions">
+        
+        <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
+          <div class="row">
+            <div class="col-sm-1">
+              <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
             </div>
-            <div class="row">
-              <div class="col-sm-2">
-                <a>edit</a>
-                <a>delelte</a>
-              </div>
+            <div class="col-sm-9">
+              <a [routerLink]="[question.id,'detail']">
+                    {{question.title}}</a>
+              <p>{{question.content}}</p>
+            </div>      
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              <a>edit</a>
+              <a>delelte</a>
             </div>
-          </div> 
+          </div>
+        </div> 
 
-        </li>
-      </ul>
-
-
-    </div>
-    <div id="tab_frequent" class="tab-pane fade">
-      <!-- Implement later -->
-    </div>
-    <div id="tab_voted" class="tab-pane fade">
-      <!-- Implement later -->
-    </div>
-
-    <!--
-    <ul class="pagination pagination-sm">
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
+      </li>
     </ul>
-    -->
+
+
   </div>
+  <div id="tab_frequent" class="tab-pane fade">
+    <!-- Implement later -->
+  </div>
+  <div id="tab_voted" class="tab-pane fade">
+    <!-- Implement later -->
+  </div>
+
+  <!--
+  <ul class="pagination pagination-sm">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+  -->
+</div>

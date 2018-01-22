@@ -4,6 +4,10 @@ import { QuestionDetailComponent } from "./forum/question-detail/question-detail
 import { ForumComponent } from "./forum/forum.component";
 import { HomepageComponent } from "./home/homepage.component";
 import { QuestionListComponent } from "./forum/question-list/question-list.component";
+import { LoginComponent } from "./login/login.component";
+import { SignupComponent } from "./login/signup.component";
+import { ContactComponent } from "./contact/contact.component";
+import { AboutComponent } from "./about/about.component";
 
 const APP_ROUTES: Routes = [
     {
@@ -14,6 +18,22 @@ const APP_ROUTES: Routes = [
     {
         path:'home',
         component: HomepageComponent
+    },
+    {
+        path:'login',
+        component: LoginComponent
+    },
+    {
+        path:'signup',
+        component: SignupComponent
+    },
+    {
+        path:'contact',
+        component: ContactComponent
+    },
+    {
+        path:'about',
+        component: AboutComponent
     },
     {
         path: 'forum',

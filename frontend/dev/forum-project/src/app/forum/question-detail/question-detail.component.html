@@ -37,23 +37,40 @@
 <!-- List of Answers -->
 <div class="row">
   <div class="col-sm-12">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let answer of question.answers">
-        <!--<div class="col-sm-1">-->
+    
+    <div *ngFor="let answer of question.answers" style="backgroud-color:blue">
+      
+        <div class="col-sm-1">
           <p>kjhkjh</p>
-        <!--</div> -->
-        <!-- <div class="col-sm-2"> -->
-          <p>Vote Up Vote Down</p>
-        <!-- </div> -->
-        <!-- <div class="col-sm-9"> -->
-          <p>{{answer.content}}</p>
-        <!-- </div> -->
-          <p>{{answer.author}}</p>
-          <p>{{answer.createDate}}</p>
-      </li>
-    </ul>
+        </div>
+        <div class="col-sm-2">
+          <div class="row">
+              <p>Vote Up</p>
+          </div>
+          <div class="row">
+              <p>Vote Down</p>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="row">
+              <p>{{answer.content}}</p>
+          </div>
+          <div class="row">
+              <p>{{answer.author}}   and   {{answer.createDate}}</p>
+          </div>
+        </div>
+    </div>
   </div>
 </div>
+
+<div class="row" style="margin-bottom: 20px">
+  <div class="col">
+    <h4> Write your answer below:</h4>
+    <textarea id="questionAnswer" style="width: 800px" rows="3" class="form-control"></textarea>
+    <a class="btn btn-primary" style="margin-top:20px" (click)="saveAnswer()"> Save Answer</a>
+  </div>
+</div>
+
 
 
   <!--         <div class="row">
