@@ -39,13 +39,19 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
     this.question =  new Question(id,"Title of this questions", "The question itself");
     this.question.id = id;
     this.question.author = "Andrius H. Sperque";
-    this.question.createDate = "";
-    this.question.updateDate = "";
+    this.question.createDate = "01 de January of 2018";
+    this.question.lastUpdate = "15 de January of 2018";
     this.question.answers = new Array<Answer>();
   
     const answer1 = new Answer(1,"the answer for this question is X");
+    answer1.author = "José de Paiva";
+    answer1.createDate = "01 de January of 2018";
     const answer2 = new Answer(2,"the answer 2 for this question is ysdfsdf");
+    answer2.author = "Henrique Maria";
+    answer2.createDate = "01 de January of 2019 ";
     const answer3 = new Answer(3,"the answer 3 for this question is Xasfasfasdfasdf");
+    answer3.author = "Thiago Gomes Porchat";
+    answer3.createDate = "01 de January of 2020";
     
     this.question.answers.push(answer1);
     this.question.answers.push(answer2);

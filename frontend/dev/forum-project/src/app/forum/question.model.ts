@@ -8,7 +8,7 @@ export class Question {
   public comments: Comment[];
   public author: string; //User
   public createDate: string; //Date
-  public updateDate: string; // Date
+  public lastUpdate: string; // Date
   public votesUp: string[]; // Vote { User: andirus.s type: positive data: xxxx}
   public votesDown: string[]; // Vote
   public shared: string[]; // user can share the quesiton over facebook or twitter.
