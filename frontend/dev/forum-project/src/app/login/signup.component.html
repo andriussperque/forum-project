@@ -1,35 +1,40 @@
 <div class="row">
-    <div class="col">
+    <div class="col-sm-4">
       
-      <!-- Page Title --> 
       <h2>Sign Up</h2>
   
-      <!-- Main Form --> 
-      <form>
+      <form [formGroup]="signupForm" (ngSubmit)="onSend()">
         <div class="form-group">
 
             <label for="firstName" class="control-label">First Name: </label>
-            <input id="firstName" class="form-control" type="text" maxlength="50" placeholder="John Enry">
-            
+            <input formControlName="firstName" id="firstName" class="form-control" type="text" maxlength="50" placeholder="John Enry">
+            <span *ngIf="isValid('firstName')" class="help-block"> Please enter a valid name!</span>
+
             <label for="lastName" class="control-label">Last Name: </label>
-            <input id="lastName" class="form-control" type="text" maxlength="50" placeholder="Smith">
+            <input formControlName="lastName" id="lastName" class="form-control" type="text" maxlength="50" placeholder="Smith">
+            <span *ngIf="isValid('lastName')" class="help-block"> Please enter a valid last name!</span>
 
             <label for="nickname" class="control-label">Nickname </label>
-            <input id="nickname" class="form-control" type="text" maxlength="50" placeholder="johnSmith">  
+            <input formControlName="nickname" id="nickname" class="form-control" type="text" maxlength="50" placeholder="johnSmith">  
+            <span *ngIf="isValid('nickname')" class="help-block"> Please enter a valid nickname!</span>
 
             <label for="birthday" class="control-label">Birthday </label>
-            <input id="birthday" class="form-control" type="text" maxlength="50" placeholder="mm/dd/aaaa">                  
+            <input formControlName="birthday" id="birthday" class="form-control" type="text" maxlength="50" placeholder="mm/dd/aaaa">                  
+            <span *ngIf="isValid('birthday')" class="help-block"> Please enter a valid birthday!</span>
 
             <label for="mail" class="control-label">Email(login): </label>
-            <input id="email" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
-  
+            <input formControlName="email" id="email" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
+            <span *ngIf="isValid('email')" class="help-block"> Please enter a valid email!</span>
+
             <label for="password" class="control-label">Password: </label>
-            <input id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
+            <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
+            <span *ngIf="isValid('password')" class="help-block"> Please enter a password!</span>
 
             <label for="rePassword" class="control-label">Confirm password: </label>
-            <input id="rePassword" class="form-control" type="password" maxlength="30" placeholder="***********">       
-            
-            <a class="btn btn-primary">Send</a>
+            <input formControlName="rePassword" id="rePassword" class="form-control" type="password" maxlength="30" placeholder="***********">       
+            <span *ngIf="isValid('rePassword')" class="help-block"> Please re-enter your password!</span>
+
+            <button type="submit" class="btn btn-primary">Send</button>
         </div>
       </form>
     </div>

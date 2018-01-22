@@ -3,7 +3,7 @@
     
     <!-- Link fo Home -->
     <div class="navbar-header">  
-      <a [routerLink]="['/home']" class="navbar-brand">Vanhack Forum</a>
+      <a [routerLink]="['/home']" class="navbar-brand">Forum</a>
     </div>
     
     <ul class="nav navbar-nav">
@@ -26,9 +26,9 @@
     </ul>
 
     <!-- Search area -->
-    <form class="navbar-form navbar-right" action="/action_page.php">
+    <form [formGroup]="headerForm" class="navbar-form navbar-right" action="/action_page.php">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input formControlName="search" type="text" class="form-control" placeholder="Search">
       </div>
       <a [routerLink]="['/forum/questions']" class="btn btn-default">
           <i class="glyphicon glyphicon-search"></i>
