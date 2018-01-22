@@ -11,9 +11,8 @@ import { Answer } from '../answer.model';
 })
 export class QuestionDetailComponent implements OnInit, OnDestroy {
 
-  question: Question;
-
   paramsSubscription: Subscription;
+  question: Question;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -22,7 +21,6 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
     const id = this.route.snapshot.params['id'];
     this.paramsSubscription = this.route.params.subscribe ( (params: Params)=> {
       const id2 = params['id'];
-      
     });
 
     this.createObjectForTest(id);
@@ -32,8 +30,6 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
   }
-
-
 
   createObjectForTest(id: number) {
     this.question =  new Question(id,"Title of this questions", "The question itself");
@@ -57,5 +53,4 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
     this.question.answers.push(answer2);
     this.question.answers.push(answer3);
   }
-
 }

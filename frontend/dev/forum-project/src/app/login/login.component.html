@@ -3,16 +3,18 @@
 
     <h2>Login</h2>
 
-    <form formGroup="">
+    <form [formGroup]="loginForm" (ngSubmit)="onSend()">
       <div class="form-group">
         
-          <label for="login" class="control-label">Email: </label>
-          <input id="login" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
+          <label for="mail" class="control-label">Email: </label>
+          <input formControlName="email" id="email" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
+          <span *ngIf="isValid('email')" class="help-block"> Please enter a valid email!</span>
 
           <label for="password" class="control-label">Password: </label>
-          <input id="password" class="form-control" type="password" maxlength="30" placeholder="***********">        
+          <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
+          <span *ngIf="isValid('password')" class="help-block"> Please enter a password!</span>
 
-          <a class="btn btn-primary">Send</a>
+          <button type="submit" class="btn btn-primary">Send</button>
       </div>
     </form>
   </div>
