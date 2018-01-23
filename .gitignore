@@ -4,3 +4,13 @@ frontend/\.DS_Store
 backend/\.DS_Store
 
 \.DS_Store
+
+backend/dev/forum/\.project
+
+backend/dev/forum/\.settings/\.jsdtscope
+
+*.prefs
+
+backend/dev/forum/\.settings/org\.eclipse\.wst\.common\.component
+
+backend/dev/forum/\.settings/
