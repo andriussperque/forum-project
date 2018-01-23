@@ -8,15 +8,15 @@
 
             <label for="firstName" class="control-label">First Name: </label>
             <input formControlName="firstName" id="firstName" class="form-control" type="text" maxlength="50" placeholder="John Enry">
-            <span *ngIf="isValid('firstName')" class="help-block"> Please enter a valid name!</span>
+            <span *ngIf="isRequired('firstName')" class="help-block"> This field is required!</span>
 
             <label for="lastName" class="control-label">Last Name: </label>
             <input formControlName="lastName" id="lastName" class="form-control" type="text" maxlength="50" placeholder="Smith">
-            <span *ngIf="isValid('lastName')" class="help-block"> Please enter a valid last name!</span>
+            <span *ngIf="isRequired('lastName')" class="help-block"> This field is required!</span>
 
             <label for="nickname" class="control-label">Nickname </label>
             <input formControlName="nickname" id="nickname" class="form-control" type="text" maxlength="50" placeholder="johnSmith">  
-            <span *ngIf="isValid('nickname')" class="help-block"> Please enter a valid nickname!</span>
+            <span *ngIf="isRequired('nickname')" class="help-block"> This field is required!</span>
 
             <label for="birthday" class="control-label">Birthday </label>
             <input formControlName="birthday" id="birthday" class="form-control" type="text" maxlength="50" placeholder="mm/dd/aaaa">                  
@@ -28,11 +28,11 @@
 
             <label for="password" class="control-label">Password: </label>
             <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
-            <span *ngIf="isValid('password')" class="help-block"> Please enter a password!</span>
+            <span *ngIf="isRequired('password')" class="help-block"> Please enter a password!</span>
 
             <label for="rePassword" class="control-label">Confirm password: </label>
             <input formControlName="rePassword" id="rePassword" class="form-control" type="password" maxlength="30" placeholder="***********">       
-            <span *ngIf="isValid('rePassword')" class="help-block"> Please re-enter your password!</span>
+            <span *ngIf="isRequired('rePassword')" class="help-block"> Please re-enter your password!</span>
 
             <button type="submit" class="btn btn-primary">Send</button>
         </div>

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     this.loginForm = new FormGroup ({
-      email: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required)
     });
   }
@@ -26,6 +26,15 @@ export class LoginComponent implements OnInit {
   isValid(fieldName: string) {
     if(!this.loginForm.get(fieldName).valid 
       && this.loginForm.get(fieldName).touched) {
+      return true;
+    }
+    return false;
+  }
+
+  isRequired(fieldName: string) {
+    if(!this.loginForm.get(fieldName).valid 
+      && this.loginForm.get(fieldName).touched
+      && this.loginForm.get(fieldName).errors['required']) {
       return true;
     }
     return false;

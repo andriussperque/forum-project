@@ -41,4 +41,20 @@ export class SignupComponent implements OnInit {
     return false;
   }
 
+  isRequired(fieldName: string) {
+    if(!this.signupForm.get(fieldName).valid 
+      && this.signupForm.get(fieldName).touched
+      && this.signupForm.get(fieldName).errors['required']) {
+      return true;
+    }
+    return false;
+  }
+
+  /** Example of custom validator
+   * ... this.forbiddenNames.bind(this) ]
+  forbiddenNames (control: FormControl) : {[s: string]: boolean} {
+    const x = 1;
+    return x > 0 ? null : {'nameIsForbidden': true};
+  }
+  */
 }

@@ -8,7 +8,8 @@
         
           <label for="mail" class="control-label">Email: </label>
           <input formControlName="email" id="email" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
-          <span *ngIf="isValid('email')" class="help-block"> Please enter a valid email!</span>
+          <span *ngIf="isValid('email') && !isRequired('email')" class="help-block"> Please enter a valid email!</span>
+          <span *ngIf="isRequired('email')" class="help-block"> This field is required!</span>
 
           <label for="password" class="control-label">Password: </label>
           <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
