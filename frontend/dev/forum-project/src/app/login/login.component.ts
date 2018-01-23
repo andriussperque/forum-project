@@ -23,8 +23,14 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.loginService.login(this.loginForm.value)
     .subscribe (
-      (response) => console.log(response),
-      (error) => console.log(error)
+      (response) => {
+        console.log(response)
+        
+      },
+      (error) => {
+        console.log(error);
+        alert("Email or Password is invalid.");
+      }
     );
   }
 

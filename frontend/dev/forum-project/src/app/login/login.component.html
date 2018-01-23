@@ -15,7 +15,8 @@
           <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
           <span *ngIf="isValid('password')" class="help-block"> Please enter a password!</span>
 
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button [disabled]="isValid('email') || isValid('password') 
+               || loginForm.get('email').value === null || loginForm.get('password').value === null " type="submit" class="btn btn-primary">Send</button>
       </div>
     </form>
   </div>
