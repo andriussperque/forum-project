@@ -28,8 +28,7 @@ export class SignupComponent implements OnInit {
 
   }
 
-  onSend() {
-    console.log(JSON.stringify(this.signupForm.value));
+  onSigup() {
     this.loginService.signup(this.signupForm.value)
       .subscribe (
         (response) => console.log(response),

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
 
@@ -19,8 +20,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSend() {
-    console.log(JSON.stringify(this.loginForm.value));
+  onLogin() {
+    this.loginService.login(this.loginForm.value)
+    .subscribe (
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
   }
 
   isValid(fieldName: string) {

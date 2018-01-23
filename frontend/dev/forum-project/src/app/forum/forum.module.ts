@@ -8,6 +8,7 @@ import { ForumComponent } from './forum.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionCreateComponent } from './question-create/question-create.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { ForumService } from './forum.service';
 
 
 @NgModule({
@@ -25,6 +26,8 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
       ReactiveFormsModule,
       Routing
     ],
-    providers: []
+    providers: [
+      ForumService
+    ]
   })
   export class ForumModule { }

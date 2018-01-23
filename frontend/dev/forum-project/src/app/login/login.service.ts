@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { Http, Headers} from "@angular/http";
 
 @Injectable()
 export class LoginService {
@@ -11,7 +11,8 @@ export class LoginService {
     constructor(private http: Http){}
 
     public login(body: any) {
-        return this.http.post(this.LOGIN_URL,"");
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.post(this.LOGIN_URL,"", {headers: headers});
     }
 
     public signup(body: any) {

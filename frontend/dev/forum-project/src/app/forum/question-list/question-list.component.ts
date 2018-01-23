@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../question.model';
+import { ForumService } from '../forum.service';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-question-list',
@@ -20,9 +22,21 @@ export class QuestionListComponent implements OnInit {
     new Question(10, "How can I implment this system in only two days?","I have a huge software two implement and I only have two days to do that. What should I do?")
   ];
 
-  constructor() { }
+  constructor(private forumService: ForumService) { }
 
   ngOnInit() {
+
   }
 
+  // Just showing how to use the method. json
+  private getQuestions(): Question[] {
+    this.forumService.listQuestions("").subscribe(
+      (response: Response) => {
+        const data = response.json();
+        console.log(data);
+      },
+      (error) => console.log(error)
+    );
+    return null;
+  }
 }
