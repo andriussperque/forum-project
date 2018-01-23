@@ -17,6 +17,7 @@ import { LoginService } from './login/login.service';
 import { HttpModule } from '@angular/http';
 import { PageNotFoundComponent } from './errors/page-not-found.component';
 import { PageUnauthorizedComponent } from './errors/page-unauthorized.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PageUnauthorizedComponent } from './errors/page-unauthorized.component'
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
-    PageUnauthorizedComponent
+    PageUnauthorizedComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
