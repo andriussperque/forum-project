@@ -18,6 +18,7 @@ import { HttpModule } from '@angular/http';
 import { PageNotFoundComponent } from './errors/page-not-found.component';
 import { PageUnauthorizedComponent } from './errors/page-unauthorized.component';
 import { FaqComponent } from './faq/faq.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { FaqComponent } from './faq/faq.component';
     HttpModule,
     Routing
   ],
-  providers: [LoginService],
+  providers: [LoginService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

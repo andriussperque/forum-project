@@ -14,3 +14,7 @@ backend/dev/forum/\.settings/\.jsdtscope
 backend/dev/forum/\.settings/org\.eclipse\.wst\.common\.component
 
 backend/dev/forum/\.settings/
+
+frontend/dev/node_modules/\.bin/
+
+frontend/dev/node_modules/@firebase/app-types/
