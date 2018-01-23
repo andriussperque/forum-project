@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { LoginService } from './login.service';
 
 
 @Component({
@@ -10,10 +12,7 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
 
-
-  constructor() {
-
-  }
+  constructor(private loginService: LoginService) {}
 
   ngOnInit() {
 
@@ -31,6 +30,11 @@ export class SignupComponent implements OnInit {
 
   onSend() {
     console.log(JSON.stringify(this.signupForm.value));
+    this.loginService.signup(this.signupForm.value)
+      .subscribe (
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
   }
 
   isValid(fieldName: string) {
@@ -57,4 +61,47 @@ export class SignupComponent implements OnInit {
     return x > 0 ? null : {'nameIsForbidden': true};
   }
   */
+
+  /**
+   * Assync Validator
+   * 
+   * 
+   *  new formControl( null,  [Validator.required, ...], this.forbiddenEmails)
+   *  ng-pending
+   * 
+   
+  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
+    const promise = new Promise <any> ((resolve, reject) => {
+      setTimeout(() => { 
+        if (control.value === 'test@test.com'){
+          resolve({'emailIsForbidden': true}); 
+        } else {
+          resolve(null);
+        }
+      }, 1500);
+    });
+    return promise;
+  }
+
+  changes () {
+   
+    this.signupForm.valueChanges.subscribe (
+      (value) => console.log(value)
+    );
+   
+    this.signupForm.statusChanges.subscribe (
+      (value) => console.log(value)
+    );
+
+    this.signupForm.setValue({
+    // insert all fields here with value;
+    })
+
+    this.signupForm.patchValue({
+    // Update only parcial fields
+    })
+
+    // reset form - It is possible to reset to a spefic object.
+    this.signupForm.reset();
+  }*/
 }

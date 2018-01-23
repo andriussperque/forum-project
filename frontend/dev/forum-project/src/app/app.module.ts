@@ -13,6 +13,10 @@ import { SignupComponent } from './login/signup.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './login/login.service';
+import { HttpModule } from '@angular/http';
+import { PageNotFoundComponent } from './errors/page-not-found.component';
+import { PageUnauthorizedComponent } from './errors/page-unauthorized.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +28,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent,
+    PageUnauthorizedComponent
   ],
   imports: [
     BrowserModule,
     ForumModule,
     ReactiveFormsModule,
+    HttpModule,
     Routing
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

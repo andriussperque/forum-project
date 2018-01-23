@@ -8,6 +8,7 @@ import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./login/signup.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
+import { PageNotFoundComponent } from "./errors/page-not-found.component";
 
 const APP_ROUTES: Routes = [
     {
@@ -61,7 +62,14 @@ const APP_ROUTES: Routes = [
             }
         ]
     },
-    
+    {
+        path: 'page-not-found',
+        component: PageNotFoundComponent
+    },
+    {
+        path: '**',
+        redirectTo: '/page-not-found'
+    }
 ];
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);
