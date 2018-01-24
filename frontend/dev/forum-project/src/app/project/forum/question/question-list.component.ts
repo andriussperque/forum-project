@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from '../question.model';
+import { Question } from './question.model';
 import { ForumService } from '../forum.service';
 import { Response } from '@angular/http';
 

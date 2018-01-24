@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Question } from '../question.model';
 import { Answer } from '../answer.model';
-import { AuthService } from '../../auth/auth.service';
+import { AuthService } from '../../../../auth/auth.service';
 
 @Component({
   selector: 'app-question-detail',
