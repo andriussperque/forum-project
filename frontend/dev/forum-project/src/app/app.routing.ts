@@ -9,6 +9,9 @@ import { SignupComponent } from "./login/signup.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import { PageNotFoundComponent } from "./errors/page-not-found.component";
+import { SigninAuthComponent } from "./auth/signin/signin-auth.component";
+import { SignupAuthComponent } from "./auth/signup/signup-auth.component";
+import { AuthGuard } from "./auth/auth-guard.service";
 
 const APP_ROUTES: Routes = [
     {
@@ -29,6 +32,14 @@ const APP_ROUTES: Routes = [
         component: SignupComponent
     },
     {
+        path:'signin-auth',
+        component: SigninAuthComponent
+    },
+    {
+        path:'signup-auth',
+        component: SignupAuthComponent
+    },
+    {
         path:'contact',
         component: ContactComponent
     },
@@ -42,7 +53,7 @@ const APP_ROUTES: Routes = [
         children: [
             {
                 path: 'questions', 
-                component: QuestionListComponent 
+                component: QuestionListComponent
             },
             {
                 path: 'questions/:id', 
@@ -54,11 +65,13 @@ const APP_ROUTES: Routes = [
             },
             {
                 path: 'questions/:id/edit', 
-                component: QuestionCreateComponent 
+                component: QuestionCreateComponent,
+                canActivate: [AuthGuard] 
             },
             {
                 path: 'questions/question-create', 
-                component: QuestionCreateComponent
+                component: QuestionCreateComponent,
+                canActivate: [AuthGuard]
             }
         ]
     },

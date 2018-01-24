@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Question } from '../question.model';
 import { Answer } from '../answer.model';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-question-detail',
@@ -14,7 +15,8 @@ export class QuestionDetailComponent implements OnInit, OnDestroy {
   paramsSubscription: Subscription;
   question: Question;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private authService: AuthService) {}
 
   ngOnInit() {
     

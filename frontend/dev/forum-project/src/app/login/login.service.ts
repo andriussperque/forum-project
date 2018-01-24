@@ -23,4 +23,8 @@ export class LoginService {
     public logout(body: any) {
         return this.http.post(this.LOGOUT_URL, body);
     }
+
+    isAuthenticated() {
+        return true; //I will need to change that
+      }
 }

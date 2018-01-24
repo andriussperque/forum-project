@@ -19,6 +19,9 @@ import { PageNotFoundComponent } from './errors/page-not-found.component';
 import { PageUnauthorizedComponent } from './errors/page-unauthorized.component';
 import { FaqComponent } from './faq/faq.component';
 import { AuthService } from './auth/auth.service';
+import { SigninAuthComponent } from './auth/signin/signin-auth.component';
+import { SignupAuthComponent } from './auth/signup/signup-auth.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { AuthService } from './auth/auth.service';
     HomepageComponent,
     LoginComponent,
     SignupComponent,
+    SigninAuthComponent,
+    SignupAuthComponent,
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
@@ -42,7 +47,7 @@ import { AuthService } from './auth/auth.service';
     HttpModule,
     Routing
   ],
-  providers: [LoginService, AuthService],
+  providers: [LoginService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

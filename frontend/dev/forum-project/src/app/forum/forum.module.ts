@@ -9,6 +9,7 @@ import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionCreateComponent } from './question-create/question-create.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { ForumService } from './forum.service';
+import { AuthService } from '../auth/auth.service';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ForumService } from './forum.service';
       Routing
     ],
     providers: [
-      ForumService
+      ForumService, 
+      AuthService
     ]
   })
   export class ForumModule { }

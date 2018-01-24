@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+          <div class="form-group">
+            
+              <label for="email" class="control-label">Email: </label>
+              <input formControlName="email" id="email" class="form-control" type="text" maxlength="100" placeholder="john.smith@gmail.com">
+              <span *ngIf="isValid('email') && !isRequired('email')" class="help-block"> Please enter a valid email!</span>
+              <span *ngIf="isRequired('email')" class="help-block"> This field is required!</span>
+    
+              <label for="password" class="control-label">Password: </label>
+              <input formControlName="password" id="password" class="form-control" type="password" maxlength="30" placeholder="**********">        
+              <span *ngIf="isValid('password')" class="help-block"> Please enter a password!</span>
+    
+              <button [disabled]="isValid('email') || isValid('password') 
+                   || signupForm.get('email').value === null || signupForm.get('password').value === null " type="submit" class="btn btn-primary">Send</button>
+          </div>
+      </form>
+  </div>
+</div>
+

@@ -5,7 +5,7 @@
   </div>
   
   <!--  It shall appears only to the question's owner when he is logged in -->
-  <div class="col-sm-2">
+  <div class="col-sm-2" *ngIf="authService.isAuthenticated()" >
       <a class="btn btn-primary btn-sm" 
           [routerLink]="['../edit']"> Edit</a>
 
@@ -38,17 +38,17 @@
 <div class="row">
   <div class="col-sm-12">
     
-    <div *ngFor="let answer of question.answers" style="backgroud-color:blue">
+    <div *ngFor="let answer of question.answers;" style="color:gray">
       
         <div class="col-sm-1">
-          <p>kjhkjh</p>
+          <p>Answer:</p>
         </div>
         <div class="col-sm-2">
           <div class="row">
-              <p>Vote Up</p>
+             <!-- <p>Vote Up</p> -->
           </div>
           <div class="row">
-              <p>Vote Down</p>
+             <!-- <p>Vote Down</p> -->
           </div>
         </div>
         <div class="col-sm-9">
@@ -58,12 +58,13 @@
           <div class="row">
               <p>{{answer.author}}   and   {{answer.createDate}}</p>
           </div>
+          <hr>
         </div>
     </div>
   </div>
 </div>
 
-<div class="row" style="margin-bottom: 20px">
+<div class="row" style="margin-bottom: 20px" *ngIf="authService.isAuthenticated()" >
   <div class="col">
     <h4> Write your answer below:</h4>
     <textarea id="questionAnswer" style="width: 800px" rows="3" class="form-control"></textarea>
@@ -71,7 +72,16 @@
   </div>
 </div>
 
+<div class="row" style="margin-bottom: 20px" *ngIf="!authService.isAuthenticated()" >
+    <div class="col">
+      <h4> Write your answer below:</h4>
+      <textarea id="questionAnswer" style="width: 100%" rows="3" class="form-control">
+      </textarea>
 
+      <h4 style="text-align:center; color: red">Sign-In to answer this question!</h4>
+
+    </div>
+  </div>
 
   <!--         <div class="row">
             <div class="col-sm-1"></div>
