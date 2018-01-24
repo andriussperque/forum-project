@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from "./errors/page-not-found.component";
 import { SigninAuthComponent } from "./auth/signin/signin-auth.component";
 import { SignupAuthComponent } from "./auth/signup/signup-auth.component";
 import { AuthGuard } from "./auth/auth-guard.service";
+import { NgModule } from "@angular/core";
 
 const APP_ROUTES: Routes = [
     {
@@ -85,4 +86,14 @@ const APP_ROUTES: Routes = [
     }
 ];
 
-export const Routing = RouterModule.forRoot(APP_ROUTES);
+@NgModule ({
+    imports: [
+        RouterModule.forRoot(APP_ROUTES)
+    ],
+    exports: [
+        RouterModule
+    ]
+
+})
+export class AppRoutingModule {
+}

@@ -6,7 +6,7 @@ import { ForumModule } from './forum/forum.module';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
-import { Routing } from "./app.routing";
+import { AppRoutingModule } from "./app.routing.module";
 import { HomepageComponent } from './home/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup.component';
@@ -45,7 +45,7 @@ import { AuthGuard } from './auth/auth-guard.service';
     ForumModule,
     ReactiveFormsModule,
     HttpModule,
-    Routing
+    AppRoutingModule
   ],
   providers: [LoginService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

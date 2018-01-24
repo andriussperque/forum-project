@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { CommonModuel } from '@angular/common';
 
-import { Routing } from "../app.routing";
+import { AppRoutingModule } from "../app.routing.module";
 import { ForumComponent } from './forum.component';
 import { QuestionListComponent } from './question-list/question-list.component';
 import { QuestionCreateComponent } from './question-create/question-create.component';
@@ -26,7 +26,7 @@ import { DataStorageService } from '../shared/data-storage.service';
     imports: [
       BrowserModule,
       ReactiveFormsModule,
-      Routing
+      AppRoutingModule
     ],
     providers: [
       ForumService, 
