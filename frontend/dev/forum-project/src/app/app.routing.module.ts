@@ -1,9 +1,9 @@
 import { Routes, RouterModule } from "@angular/router";
-import { QuestionCreateComponent } from "./forum/question-create/question-create.component";
-import { QuestionDetailComponent } from "./forum/question-detail/question-detail.component";
-import { ForumComponent } from "./forum/forum.component";
-import { HomepageComponent } from "./home/homepage.component";
-import { QuestionListComponent } from "./forum/question-list/question-list.component";
+import { QuestionCreateComponent } from "./project/forum/question/question-create/question-create.component";
+import { QuestionDetailComponent } from "./project/forum/question/question-detail/question-detail.component";
+import { ForumComponent } from "./project/forum/forum.component";
+import { HomepageComponent } from "./common/home/homepage.component";
+import { QuestionListComponent } from "./project/forum/question/question-list.component";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./login/signup.component";
 import { ContactComponent } from "./common/contact/contact.component";
