@@ -11,7 +11,7 @@ export class DataStorageService {
 
   constructor(private http: Http,
               private authService: AuthService) {
-  }
+  }  
 
   //'recipes'
   public store(posfixUrl, data) {
