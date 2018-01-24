@@ -4,13 +4,13 @@ import { QuestionDetailComponent } from "./project/forum/question/question-detai
 import { ForumComponent } from "./project/forum/forum.component";
 import { HomepageComponent } from "./common/home/homepage.component";
 import { QuestionListComponent } from "./project/forum/question/question-list.component";
-import { LoginComponent } from "./login/login.component";
-import { SignupComponent } from "./login/signup.component";
+import { LoginComponent } from "./auth/manual/login.component";
+import { SignupComponent } from "./auth/manual/signup.component";
 import { ContactComponent } from "./common/contact/contact.component";
 import { AboutComponent } from "./common/about/about.component";
 import { PageNotFoundComponent } from "./common/errors/page-not-found.component";
-import { SigninAuthComponent } from "./auth/signin/signin-auth.component";
-import { SignupAuthComponent } from "./auth/signup/signup-auth.component";
+import { SigninAuthComponent } from "./auth/firebase/signin/signin-auth.component";
+import { SignupAuthComponent } from "./auth/firebase/signup/signup-auth.component";
 import { AuthGuard } from "./auth/auth-guard.service";
 import { NgModule } from "@angular/core";
 
