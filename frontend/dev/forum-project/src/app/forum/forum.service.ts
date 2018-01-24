@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
+import { DataStorageService } from "../shared/data-storage.service";
 
 @Injectable()
 export class ForumService {
@@ -7,7 +8,8 @@ export class ForumService {
     private BASE_URL = "/forum";
     private QUESTIONS_URL = "/questions";
 
-    constructor(private http: Http){}
+    constructor(private http: Http,
+                private dataStorageService: DataStorageService){}
 
     public listQuestions(body: any) {
         return this.http.get(this.BASE_URL,"");
@@ -18,7 +20,8 @@ export class ForumService {
     }
 
     public createQuestion(body: any) {
-        return this.http.post(this.BASE_URL,"");
+        this.dataStorageService.store("questions", body);
+        return true; //this.http.post(this.BASE_URL,"");
     }
 
     public updateQuestion(body: any) {

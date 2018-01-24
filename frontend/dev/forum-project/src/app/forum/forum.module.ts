@@ -10,6 +10,7 @@ import { QuestionCreateComponent } from './question-create/question-create.compo
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { ForumService } from './forum.service';
 import { AuthService } from '../auth/auth.service';
+import { DataStorageService } from '../shared/data-storage.service';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AuthService } from '../auth/auth.service';
     ],
     providers: [
       ForumService, 
-      AuthService
+      AuthService,
+      DataStorageService
     ]
   })
   export class ForumModule { }
