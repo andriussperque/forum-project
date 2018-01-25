@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+
+<div class="container">
+    <div class="row">
+        <div routerLinkActive="hide" [routerLinkActiveOptions]="{exact: true}" class="col-sm-12">
+            
+            <!-- Main Page for Forum -->
+            <div class="align-items-center" style="min-height: 300px">
+                <div class="col">
+                    <h1 class="text-center"> Welcome to Forum!</h1>
+                    <h2 class="text-center">Here you find the best answers to the best questions!</h2>
+                    <a class="btn btn-primary" routerLink="/forum/questions">Questions</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div> 
+</div>
