@@ -2,14 +2,14 @@
   <div class="container-fluid">
     
     <!-- Link fo Home -->
-    <div class="navbar-header">  
+    <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="navbar-header">  
       <a [routerLink]="['/home']" class="navbar-brand">HubProjects</a>
     </div>
     
     <ul class="nav navbar-nav">
 
       <!-- Link to Project Home -->
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
           <a [routerLink]="['/forum']">Forum</a>
       </li>
     
