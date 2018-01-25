@@ -3,20 +3,27 @@
     
     <!-- Link fo Home -->
     <div class="navbar-header">  
-      <a [routerLink]="['/home']" class="navbar-brand">Forum</a>
+      <a [routerLink]="['/home']" class="navbar-brand">HubProjects</a>
     </div>
     
     <ul class="nav navbar-nav">
-      
-      <!-- Link to Questions' list -->
+
+      <!-- Link to Project Home -->
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/forum']">Forum</a>
+      </li>
+    
+      <!-- Link to Questions' list 
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/forum/questions']">Questions</a>
       </li>
-
-      <!-- It needs to check if the user is logged in or not -->
+      -->
+      
+      <!-- It needs to check if the user is logged in or not 
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/forum/questions/question-create']">New Question</a>
       </li>
+      -->
     </ul>
 
     <!-- Login area --> 
