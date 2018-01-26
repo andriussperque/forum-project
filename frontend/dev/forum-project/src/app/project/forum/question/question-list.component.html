@@ -20,15 +20,15 @@
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let question of questions">
         
-        <div class="container-fluid" style="margin: 15px; border-color: blue; border-style: solid; border-width: 1px">
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-1">
+            <div class="col-sm-2">
               <img class="img-responsive" alt="Profile Picture" src="https://cdn1.iconfinder.com/data/icons/social-58/128/social_network_web_media_-32-128.png">
             </div>
-            <div class="col-sm-9">
-              <a [routerLink]="[question.id,'detail']">
-                    {{question.title}}</a>
+            <div class="col-sm-8">
+              <a [routerLink]="[question.id,'detail']"> {{question.title}}</a>
               <p>{{question.content}}</p>
+              <p>{{question.author}}</p>
             </div>      
           </div>
           <div class="row">

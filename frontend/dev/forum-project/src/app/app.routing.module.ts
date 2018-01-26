@@ -57,6 +57,11 @@ const APP_ROUTES: Routes = [
                 component: QuestionListComponent
             },
             {
+                path: 'questions/question-create', 
+                component: QuestionCreateComponent,
+                canActivate: [AuthGuard]
+            },
+            {
                 path: 'questions/:id', 
                 component: QuestionDetailComponent 
             },
@@ -68,11 +73,6 @@ const APP_ROUTES: Routes = [
                 path: 'questions/:id/edit', 
                 component: QuestionCreateComponent,
                 canActivate: [AuthGuard] 
-            },
-            {
-                path: 'questions/question-create', 
-                component: QuestionCreateComponent,
-                canActivate: [AuthGuard]
             }
         ]
     },
