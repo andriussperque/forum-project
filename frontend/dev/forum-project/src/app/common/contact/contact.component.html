@@ -1,3 +1,27 @@
-<p>
-  contact works!
-</p>
+<div class="row">
+  <div class="col">
+    <h2>Contact</h2>
+    
+    <form [formGroup]="contactForm" (ngSubmit)="send()">
+
+      <label for="name" class="control-label">Name</label>
+      <input id="name" type="text" class="form-control" maxlength="50" placeholder="John Smith">
+
+      <label for="company" class="control-label">Company</label>
+      <input id="company" type="text" class="form-control" maxlength="50" placeholder="NIMK">
+
+      <label for="email" class="control-label">Email</label>
+      <input id="email" type="text" class="form-control" maxlength="50" placeholder="john.smith@email.com">
+
+      <label for="subject" class="control-label">Subject</label>
+      <input id="subject" type="text" class="form-control" placeholder="Digite aqui o título de sua mensagem">
+
+      <label for="message" class="control-label">Message</label>
+      <textarea class="form-control" rows="4" cols="4"></textarea>
+
+      <button type="submit" class="btn btn-primary">Send</button>
+
+    </form>
+
+  </div>
+</div>

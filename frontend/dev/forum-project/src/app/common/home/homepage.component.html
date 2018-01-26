@@ -1,14 +1,20 @@
 <!-- Main Page for Forum -->
-<div class="align-items-center" style="min-height: 300px">
+<div class="row" style="min-height: 300px">
+  <div class="row">
     <div class="jumbotron">
 
         <h2 class="text-center"> Welcome to Forum!</h2>
         <h3 class="text-center">Here you find the best answers to the best questions!</h3>
 
     </div>
-    <div class="col align-items-center">
-        <hr>
+  </div>
+  <div class="row">
+      <hr>
+  </div>
+  <div class="row">
+    <div class="col">
         <a class="btn btn-primary" routerLink="/forum/questions">Questions</a>
         <a class="btn btn-danger" [routerLink]="['/forum/questions/create-question']">Create Question</a>
     </div>
+  </div>
 </div>
