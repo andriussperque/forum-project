@@ -13,6 +13,7 @@ import { SigninAuthComponent } from "./auth/firebase/signin/signin-auth.componen
 import { SignupAuthComponent } from "./auth/firebase/signup/signup-auth.component";
 import { AuthGuard } from "./auth/auth-guard.service";
 import { NgModule } from "@angular/core";
+import { CanDeactivateGuard } from "./project/forum/question/question-create/can-deactivate-guard.service";
 
 const APP_ROUTES: Routes = [
     {
@@ -59,7 +60,8 @@ const APP_ROUTES: Routes = [
             {
                 path: 'questions/question-create', 
                 component: QuestionCreateComponent,
-                canActivate: [AuthGuard]
+                canActivate: [AuthGuard],
+                canDeactivate: [CanDeactivateGuard]
             },
             {
                 path: 'questions/:id', 
@@ -72,7 +74,7 @@ const APP_ROUTES: Routes = [
             {
                 path: 'questions/:id/edit', 
                 component: QuestionCreateComponent,
-                canActivate: [AuthGuard] 
+                canActivate: [AuthGuard]
             }
         ]
     },

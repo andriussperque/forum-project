@@ -22,6 +22,7 @@ import { AuthService } from './auth/auth.service';
 import { SigninAuthComponent } from './auth/firebase/signin/signin-auth.component';
 import { SignupAuthComponent } from './auth/firebase/signup/signup-auth.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { CanDeactivateGuard } from './project/forum/question/question-create/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { AuthGuard } from './auth/auth-guard.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [LoginService, AuthService, AuthGuard],
+  providers: [LoginService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
