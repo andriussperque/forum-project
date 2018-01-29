@@ -12,15 +12,16 @@ import * as fromAuth from '../../auth/store/auth.reducers'
 })
 export class HeaderComponent implements OnInit {
 
-  headerForm: FormGroup; 
+  headerForm: FormGroup;
   authState: Observable<fromAuth.State>;
-  
+
   constructor(private authService: AuthService,
               private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
-  
+
     this.authState = this.store.select('auth');
+    console.log("---->" + this.authState);
 
     this.headerForm = new FormGroup({
       search: new FormControl(null)

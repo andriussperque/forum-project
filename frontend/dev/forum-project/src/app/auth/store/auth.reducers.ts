@@ -2,7 +2,7 @@ import * as AuthActions from './auth.actions';
 
 export interface State {
     token: string;
-    authenticated: boolean
+    authenticated: boolean;
 }
 
 const  InitialState: State = {
@@ -16,7 +16,7 @@ export function authReducer (state = InitialState, action: AuthActions.AuthActio
         case (AuthActions.SIGNUP):
         case (AuthActions.SIGNIN):
             return {
-                ...state, 
+                ...state,
                 authenticated: true
             };
         case (AuthActions.LOGOUT):
@@ -25,7 +25,7 @@ export function authReducer (state = InitialState, action: AuthActions.AuthActio
                 token: null,
                 authenticated: false
             };
-        default: 
+        default:
             return state;
     }
 }

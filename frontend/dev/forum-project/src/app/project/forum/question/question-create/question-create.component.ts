@@ -22,7 +22,7 @@ export class QuestionCreateComponent implements OnInit, CanDeactivateGuard {
     this.questionForm = this.fb.group ({
       title: [null, Validators.required],
       content: [null, Validators.required],
-      tag: [null, Validators.required],
+      tags: [null, Validators.required],
       category: [null, Validators.required],
       answers: this.fb.array ([
         this.fb.group({
