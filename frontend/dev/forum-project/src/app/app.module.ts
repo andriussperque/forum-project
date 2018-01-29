@@ -23,6 +23,8 @@ import { SigninAuthComponent } from './auth/firebase/signin/signin-auth.componen
 import { SignupAuthComponent } from './auth/firebase/signup/signup-auth.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { CanDeactivateGuard } from './project/forum/question/question-create/can-deactivate-guard.service';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/app.reducers'
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { CanDeactivateGuard } from './project/forum/question/question-create/can
     ForumModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers)
   ],
   providers: [LoginService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
