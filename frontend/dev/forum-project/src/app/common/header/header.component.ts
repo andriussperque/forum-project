@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
 
     this.authState = this.store.select('auth');
-    console.log("---->" + this.authState);
 
     this.headerForm = new FormGroup({
       search: new FormControl(null)

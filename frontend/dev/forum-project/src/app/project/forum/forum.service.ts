@@ -11,8 +11,8 @@ export class ForumService {
     constructor(private http: Http,
                 private dataStorageService: DataStorageService) {}
 
-    public listQuestions(body: any) {
-        return this.http.get(this.BASE_URL, "");
+    public listQuestions() {
+        return this.http.get(this.BASE_URL, null);
     }
 
     public getQuestion(body: any) {

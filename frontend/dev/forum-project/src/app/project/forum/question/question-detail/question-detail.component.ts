@@ -4,7 +4,12 @@ import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Question } from '../question.model';
 import { Answer } from '../answer.model';
-import { AuthService } from '../../../../auth/auth.service';
+import { Store } from '@ngrx/store';
+
+import * as fromAuth from '../../../../auth/store/auth.reducers';
+import * as fromApp from '../../../../store/app.reducers';
+import { Observable } from 'rxjs/Observable';
+import { ForumService } from '../../forum.service';
 
 @Component({
   selector: 'app-question-detail',
@@ -12,47 +17,29 @@ import { AuthService } from '../../../../auth/auth.service';
 })
 export class QuestionDetailComponent implements OnInit, OnDestroy {
 
+  
+  authState: Observable<fromAuth.State>;
   paramsSubscription: Subscription;
   question: Question;
 
   constructor(private route: ActivatedRoute,
-              private authService: AuthService) {}
+              private forumService: ForumService,
+              private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
     
-    const id = this.route.snapshot.params['id'];
-    this.paramsSubscription = this.route.params.subscribe ( (params: Params)=> {
-      const id2 = params['id'];
-    });
+    this.authState = this.store.select("auth");
+    const id = this.route.snapshot.params['id'];    
+  //  this.paramsSubscription = this.route.params.subscribe ( (params: Params)=> {
+  //    const id2 = params['id'];
+  //  });
 
-    this.createObjectForTest(id);
+    this.forumService.getQuestion(id).subscribe();
 
+  
   }
 
   ngOnDestroy() {
     this.paramsSubscription.unsubscribe();
-  }
-
-  createObjectForTest(id: number) {
-    this.question =  new Question(id,"Title of this questions", "The question itself");
-    this.question.id = id;
-    this.question.author = "Andrius H. Sperque";
-    this.question.createDate = "01 de January of 2018";
-    this.question.lastUpdate = "15 de January of 2018";
-    this.question.answers = new Array<Answer>();
-  
-    const answer1 = new Answer(1,"the answer for this question is X");
-    answer1.author = "José de Paiva";
-    answer1.createDate = "01 de January of 2018";
-    const answer2 = new Answer(2,"the answer 2 for this question is ysdfsdf");
-    answer2.author = "Henrique Maria";
-    answer2.createDate = "01 de January of 2019 ";
-    const answer3 = new Answer(3,"the answer 3 for this question is Xasfasfasdfasdf");
-    answer3.author = "Thiago Gomes Porchat";
-    answer3.createDate = "01 de January of 2020";
-    
-    this.question.answers.push(answer1);
-    this.question.answers.push(answer2);
-    this.question.answers.push(answer3);
   }
 }

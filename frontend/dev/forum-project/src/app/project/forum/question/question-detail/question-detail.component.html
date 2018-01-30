@@ -5,7 +5,7 @@
   </div>
   
   <!--  It shall appears only to the question's owner when he is logged in -->
-  <div class="col-sm-2" *ngIf="authService.isAuthenticated()" >
+  <div class="col-sm-2" *ngIf="authState.authenticated" >
       <a class="btn btn-primary btn-sm" 
           [routerLink]="['../edit']"> Edit</a>
 
@@ -64,7 +64,7 @@
   </div>
 </div>
 
-<div class="row" style="margin-bottom: 20px" *ngIf="authService.isAuthenticated()" >
+<div class="row" style="margin-bottom: 20px" *ngIf="authState.authenticated" >
   <div class="col">
     <h4> Write your answer below:</h4>
     <textarea id="questionAnswer" style="width: 800px" rows="3" class="form-control"></textarea>
@@ -72,7 +72,7 @@
   </div>
 </div>
 
-<div class="row" style="margin-bottom: 20px" *ngIf="!authService.isAuthenticated()" >
+<div class="row" style="margin-bottom: 20px" *ngIf="!authState.authenticated" >
     <div class="col">
       <h4> Write your answer below:</h4>
       <textarea id="questionAnswer" style="width: 100%" rows="3" class="form-control">
